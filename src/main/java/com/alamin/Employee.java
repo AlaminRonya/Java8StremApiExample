@@ -32,22 +32,22 @@ public class Employee {
             new Employee(2,"Md. Al Amin","MALE","Pabna",5000,List.of(
                     new DateClass().getDate()
             )),
-            new Employee(2,"Sabbir","MALE" ,"Pabna",15000, List.of(
+            new Employee(3,"Sabbir","MALE" ,"Pabna",15000, List.of(
                     new DateClass().getDate()
             )),
-            new Employee(2,"Masud","MALE" ,"Pabna",20000, List.of(
+            new Employee(4,"Masud","MALE" ,"Pabna",20000, List.of(
                     new DateClass().getDate()
             )),
-            new Employee(2,"Jahangir","MALE" ,"Dhaka",25000, List.of(
+            new Employee(5,"Jahangir","MALE" ,"Dhaka",25000, List.of(
                     new DateClass().getDate()
             )),
-            new Employee(2,"Manik","MALE" ,"Barisal",25000, List.of(
+            new Employee(6,"Manik","MALE" ,"Barisal",25000, List.of(
                     new DateClass().getDate()
             )),
-            new Employee(2,"Salman","MALE" ,"Dhaka",15000, List.of(
+            new Employee(7,"Salman","MALE" ,"Dhaka",15000, List.of(
                     new DateClass().getDate()
             )),
-            new Employee(2,"Ashik","MALE" ,"Dhaka",35000, List.of(
+            new Employee(8,"Ashik","MALE" ,"Dhaka",35000, List.of(
                     new DateClass().getDate(),
                     new DateClass().getDate(),
                     new DateClass().getDate(),
