@@ -25,7 +25,7 @@ public class Fibonacci {
         System.out.println(s);
 
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         fibonacciSeries(10);
         checkFibonacciNumber(50);
     }
