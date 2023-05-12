@@ -1,0 +1,10 @@
+1. Private is accessing to the same class, not access another class
+2. Public is accessing to the same class, another class and also another package can accessibility
+3. Default is accessing to the same class, same package visibility. Another class extend this class can be accessed same package on your property. Another package class extend this class can not access this property
+4. Protected is accessing to the same class, same package visibility, same package Object is accessing this property. But another package this object is not visibility. Another package this class extended than this class is accessing this protected property not access object this property.
+
+
+==> Compile Time Resolution vs Runtime Resolution
+
+1. Compile Time Resolution: Compile Time error sends to depend on type of the variable.
+
