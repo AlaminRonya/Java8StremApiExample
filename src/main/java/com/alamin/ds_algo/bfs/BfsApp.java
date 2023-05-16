@@ -19,6 +19,6 @@ public class BfsApp {
         v4.setNeighbors(List.of(v2, v6));
         v6.setNeighbors(List.of(v0));
 
-        new BreadthFirstSearch<>(v4).traverse();
+        new BreadthFirstSearch<>(v0).traverse();
     }
 }
