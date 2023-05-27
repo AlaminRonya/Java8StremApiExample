@@ -26,14 +26,20 @@ public class  Array<E> {
         return Arrays.toString(items);
     }
 }
-class Main {
+class Main<T> {
     public static  <T> T[] getArray(int size) {
         T[] genericArray = (T[]) new Object[size];
         return genericArray;
     }
+    @SuppressWarnings("unchecked")
+    static <T> T[] newArray(Class<T> type, int length)
+    {
+        return (T[]) java.lang.reflect.Array.newInstance(type, length);
+    }
     public static void main(String[] args){
         String a[] = {"a","b"};
-        String[] array = getArray(10);
+        String[] array = newArray(String.class,10);
+
         final int length = 5;
         // creating integer array
         Array<Integer>int_Array = new Array<>(length);
