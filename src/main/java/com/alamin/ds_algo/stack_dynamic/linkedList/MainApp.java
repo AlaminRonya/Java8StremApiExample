@@ -1,4 +1,4 @@
-package com.alamin.ds_algo.stack_dynamic;
+package com.alamin.ds_algo.stack_dynamic.linkedList;
 
 public class MainApp {
     public static void main(String[] args) {

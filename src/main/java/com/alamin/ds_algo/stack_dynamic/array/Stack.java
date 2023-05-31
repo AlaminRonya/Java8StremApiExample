@@ -1,4 +1,4 @@
-package com.alamin.ds_algo.stack_dynamic;
+package com.alamin.ds_algo.stack_dynamic.array;
 
 @SuppressWarnings("unchecked")
 public class Stack<T> {
