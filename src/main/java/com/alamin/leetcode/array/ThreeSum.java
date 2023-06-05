@@ -8,7 +8,11 @@ public class ThreeSum {
         int target = 100;
         List<Integer> list = threeSum(nums, target);
         System.out.println("Complexity n^2: "+list);
+        System.out.println("Complexity : "+threeSumOpt(nums, target));
 
+        System.out.println("************************");
+        List<List<Integer>> lists = threeSumOptAll(nums);
+        lists.forEach(System.out::println);
     }
 
     public static List<Integer> threeSum(int[] nums, int target){
@@ -33,5 +37,49 @@ public class ThreeSum {
             complements.add(nums[i]);
         }
         return Collections.emptyList();
+    }
+
+    public static List<Integer> threeSumOpt(int[] nums, int target){
+        Arrays.sort(nums);
+        for (int left = 0; left < nums.length-2; left++){
+            int middle = left+1;
+            int right = nums.length-1;
+            while (middle < right){
+                int sum = nums[middle] + nums[right] + nums[left];
+                if (sum == target){
+                    return List.of(nums[left], nums[middle], nums[right]);
+                }
+                else if (sum > target){
+                    do right--; while (middle < right && nums[right] == nums[right+1]);
+                }else {
+                    do middle++; while (middle < right && nums[middle] == nums[middle-1]);
+                }
+            }
+        }
+        return Collections.emptyList();
+    }
+
+
+    public static List<List<Integer>> threeSumOptAll(int[] nums){
+        Arrays.sort(nums);
+        Set<List<Integer>> result = new HashSet<>();
+        for (int left = 0; left < nums.length-2; left++){
+            int middle = left+1;
+            int right = nums.length-1;
+            while (middle < right){
+                int sum = nums[middle] + nums[right] + nums[left];
+                if (sum == 0){
+//                    return List.of(nums[left], nums[middle], nums[right]);
+                    result.add(Arrays.asList(nums[left], nums[middle], nums[right]));
+
+                }
+                if (sum > 0){
+                    do right--; while (middle < right && nums[right] == nums[right+1]);
+                }else {
+                    do middle++; while (middle < right && nums[middle] == nums[middle-1]);
+                }
+            }
+        }
+        return result.stream().toList();
     }
 }
