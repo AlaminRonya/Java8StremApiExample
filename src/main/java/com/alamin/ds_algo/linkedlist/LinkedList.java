@@ -58,6 +58,56 @@ public class LinkedList {
 
     }
 
+    public void deleteFirst(){
+        if (this.head == this.tail){
+            this.head = null;
+            this.tail = null;
+            this.size = 0;
+            return;
+        }
+        this.head = this.head.next;
+        this.size -= 1;
+    }
+
+    public void deleteLast(){
+        if (this.size < 2){
+            deleteFirst();
+            return;
+        }
+        Node prev = this.head;
+        Node temp = this.head.next;
+        while (temp.next != null){
+            prev = temp;
+            temp = temp.next;
+        }
+        prev.next = null;
+        this.size -= 1;
+    }
+    public void deleteAtPosition(int k){
+        if (k < 1 || this.size < k){
+            return;
+        }
+        if (k == 1){
+            deleteFirst();
+            return;
+        }
+        if (k == this.size){
+            deleteLast();
+            return;
+        }
+
+        Node prev = this.head;
+        Node temp = this.head.next;
+        while (--k > 0){
+            prev = temp;
+            temp = temp.next;
+
+        }
+        prev.next = temp.next;
+        this.size -= 1;
+
+    }
+
     public void show(){
         Node temp = this.head;
         while (temp != null){
@@ -69,9 +119,8 @@ public class LinkedList {
 
 
     private class Node{
-        private int value;
+        private final int value;
         private Node next;
-
         public Node(int value) {
             this.value = value;
         }

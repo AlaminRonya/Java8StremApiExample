@@ -9,5 +9,16 @@ public class Root {
         linkedList.insertAtPosition(10,2);
         linkedList.show();
         System.out.println(linkedList.getSize());
+        linkedList.deleteFirst();
+        linkedList.show();
+        System.out.println(linkedList.getSize());
+        linkedList.deleteLast();
+        linkedList.show();
+        System.out.println(linkedList.getSize());
+        linkedList.deleteAtPosition(2);
+        linkedList.show();
+        System.out.println(linkedList.getSize());
+
+
     }
 }
