@@ -24,6 +24,11 @@ public class BitManipulation {
         System.out.println("LSB: "+(num & -num));
         System.out.println("MSB: "+Integer.highestOneBit(num));
         System.out.println("LSB clear: "+Integer.toBinaryString(num & (num-1)));
+        int position = 1;
+        System.out.println("Bit set: "+Integer.toBinaryString(num | (1<<position-1)));
+        int toggle = 10;
+        System.out.println("Bit Toggle: "+Integer.toBinaryString(toggle ^ (1<<position-1)));
+
 
 
     }
