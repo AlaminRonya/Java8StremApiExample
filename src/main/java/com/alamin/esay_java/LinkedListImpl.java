@@ -52,16 +52,35 @@ public class LinkedListImpl {
     public static void main(String[] args) {
         Node root = null;
         root = insert(1, root);
-        root = insert(1, root);
-//        root = insert(3, root);
-//        root = insert(2, root);
-//        root = insert(1, root);
-//        root = insert(5, root);
+        root = insert(2, root);
+        root = insert(3, root);
+        root = insert(4, root);
+        root = insert(5, root);
+        root = insert(6, root);
 
         display(root);
+        Node odd = oddEven(root);
+        display(odd);
 //        System.out.println(middleNode(root).data);
 //        Node reverse = reverse(root);
 //        display(reverse);
         System.out.println(isPalindrome(root));
+    }
+
+    public static Node oddEven(Node head){
+        if (head == null){
+            return null;
+        }
+        Node odd = head;
+        Node even = head.next;
+        Node evenHead = even;
+        while (even != null && even.next != null){
+            odd.next = even.next;
+            odd = odd.next;
+            even.next = odd.next;
+            even = even.next;
+        }
+        odd.next = evenHead;
+        return head;
     }
 }
