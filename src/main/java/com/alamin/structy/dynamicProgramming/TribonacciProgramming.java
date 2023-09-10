@@ -1,4 +1,4 @@
-package com.alamin.dynamicProgramming;
+package com.alamin.structy.dynamicProgramming;
 
 import java.util.HashMap;
 
