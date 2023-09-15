@@ -1,8 +1,6 @@
 package com.alamin.structy.binary_tree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class BinaryTreeImplementation<T extends Comparable<T>> {
     public Node<T> insert(T data, Node<T> root) {
@@ -64,5 +62,53 @@ public class BinaryTreeImplementation<T extends Comparable<T>> {
         values.addAll(depthFirstValuesRecursive(root.getLeft())); // left values
         values.addAll(depthFirstValuesRecursive(root.getRight())); // right values
         return values;
+    }
+
+    public List<T> breadthFirstValues(Node<T> root) {
+        if (root == null) {
+            return List.of();
+        }
+        List<T> values = new ArrayList<>();
+        Queue<Node<T>> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node<T> node = queue.remove();
+            values.add(node.getData());
+            if (node.getLeft() != null) {
+                queue.add(node.getLeft());
+            }
+            if (node.getRight() != null) {
+                queue.add(node.getRight());
+            }
+        }
+        return values;
+    }
+
+    public Node<T> createdTree(Node<T> root, T value) {
+        if (root == null) {
+            return new Node<>(value);
+        }
+        List<T> values = new ArrayList<>();
+        Queue<Node<T>> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node<T> node = queue.remove();
+            values.add(node.getData());
+            if (node.getLeft() != null) {
+                queue.add(node.getLeft());
+            }
+            if (node.getRight() != null) {
+                queue.add(node.getRight());
+            }
+            if (node.getLeft() == null){
+                node.setLeft(new Node<>(value));
+                break;
+            }
+            if (node.getRight() == null){
+                node.setRight(new Node<>(value));
+                break;
+            }
+        }
+        return root;
     }
 }
