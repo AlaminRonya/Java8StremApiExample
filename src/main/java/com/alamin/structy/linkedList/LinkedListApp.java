@@ -1,7 +1,5 @@
 package com.alamin.structy.linkedList;
 
-import java.util.List;
-
 public class LinkedListApp {
     public static void main(String[] args) {
 //        Node<Integer> a = new Node<>(10);
