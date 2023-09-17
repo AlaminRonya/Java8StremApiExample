@@ -43,11 +43,12 @@ public class BinaryTreeImplementation<T extends Comparable<T>> {
         while (!stack.empty()) {
             Node<T> node = stack.pop();
             values.add(node.getData());
-            if (node.getRight() != null) {
-                stack.push(node.getRight());
-            }
+
             if (node.getLeft() != null) {
                 stack.push(node.getLeft());
+            }
+            if (node.getRight() != null) {
+                stack.push(node.getRight());
             }
         }
         return values;

@@ -29,6 +29,8 @@ public class BitManipulation {
         int toggle = 10;
         System.out.println("Bit Toggle: "+Integer.toBinaryString(toggle ^ (1<<position-1)));
 
+        System.out.println(Integer.reverse(10));
+
 
 
     }
