@@ -112,4 +112,56 @@ public class BinaryTreeImplementation<T extends Comparable<T>> {
         }
         return root;
     }
+
+    public int treeSum(Node<Integer> root){
+        if (root == null){
+            return 0;
+        }
+        return root.getData() + treeSum(root.getLeft()) + treeSum(root.getRight());
+    }
+    public int treeSumDfs(Node<Integer> root){
+        if (root == null){
+            return 0;
+        }
+
+        Stack<Node<Integer>> stack = new Stack<>();
+        stack.push(root);
+        int sum = 0;
+
+        while (!stack.empty()) {
+            Node<Integer> node = stack.pop();
+            sum += node.getData();
+
+            if (node.getLeft() != null) {
+                stack.push(node.getLeft());
+            }
+            if (node.getRight() != null) {
+                stack.push(node.getRight());
+            }
+        }
+        return sum;
+    }
+    public int treeSumBfs(Node<Integer> root){
+        return sumBfs(root);
+    }
+    private int sumBfs(Node<Integer> root){
+        if (root == null) {
+            return 0;
+        }
+        Queue<Node<Integer>> queue = new ArrayDeque<>();
+        queue.add(root);
+        int sum = 0;
+        while (!queue.isEmpty()) {
+            Node<Integer> node = queue.remove();
+            sum += node.getData();
+            if (node.getLeft() != null) {
+                queue.add(node.getLeft());
+            }
+            if (node.getRight() != null) {
+                queue.add(node.getRight());
+            }
+        }
+        return sum;
+    }
+
 }

@@ -38,28 +38,23 @@ public class BinaryApp {
             System.out.print(v + ", ");
         });
         System.out.println();
-        var app = new BinaryApp();
-        app.s(10);
-        app.s();
-        var app1 = new BinaryApp();
-        app1.s();
-        app.finalParameter(1000);
+        System.out.println("Tree Sum");
+        BinaryTreeImplementation<Integer> implementationInteger = new BinaryTreeImplementation<>();
+
+        Node<Integer> createBinaryTree = implementationInteger.createdTree(null, 10);
+        createBinaryTree = implementationInteger.createdTree(createBinaryTree, 20);
+        createBinaryTree = implementationInteger.createdTree(createBinaryTree, 30);
+        createBinaryTree = implementationInteger.createdTree(createBinaryTree, 40);
+        createBinaryTree = implementationInteger.createdTree(createBinaryTree, 50);
+        createBinaryTree = implementationInteger.createdTree(createBinaryTree, 50);
+
+        var treeSum = implementationInteger.treeSum(createBinaryTree);
+        System.out.println(treeSum);
+        System.out.println(implementationInteger.treeSumDfs(createBinaryTree));
+        System.out.println(implementationInteger.treeSumBfs(createBinaryTree));
 
     }
 
-    private int a;
-    public final void s(int b){
-        this.a = b;
-
-    }
-    public void s(){
-       final int a=100;
-    }
-
-
-    public void finalParameter(final int a){
-        System.out.println(a);
-    }
 
 
 }
