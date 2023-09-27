@@ -3,6 +3,7 @@ package com.alamin.sdlc_pro.method_overriding;
 import com.alamin.sdlc_pro.method_overriding.package1.Company;
 import com.alamin.sdlc_pro.method_overriding.package1.InfoClass;
 import com.alamin.sdlc_pro.method_overriding.package1.Varsity;
+import com.alamin.sdlc_pro.method_overriding.package2.Employee;
 import com.alamin.sdlc_pro.method_overriding.package2.Student;
 
 public class AppModifierOverriding {
@@ -15,5 +16,7 @@ public class AppModifierOverriding {
          */
         Varsity student = new Student();
         student.information();
+//        Company employee = new Employee();
+//        employee.information();
     }
 }
