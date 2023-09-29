@@ -29,6 +29,7 @@ public interface InterfaceClassDeclare  {
     private static void staticMethod(){}
     default void overrideOrNotOverrideMethod(){}
     void methodAutomaticPublic();
+    static void methodAutomaticPublicS(){}
 
 
 }
