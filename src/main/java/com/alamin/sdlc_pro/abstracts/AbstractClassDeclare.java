@@ -2,6 +2,9 @@ package com.alamin.sdlc_pro.abstracts;
 
 abstract class AbstractClassDeclare {
     /**
+     * Can't private abstract class AbstractClassDeclare
+     * Can't protected abstract class AbstractClassDeclare
+     * Can't default abstract class AbstractClassDeclare
      * Not create object for abstract class
      * Create of anonymous inner class
      * At a time not use final and abstract keyword (final abstract)
@@ -34,6 +37,7 @@ abstract class AbstractClassDeclare {
         this.v = v;
         this.pb = pb;
     }
+    void defaultMethod(){}
     abstract void sh();
     protected abstract void sh1();
     public abstract void sh2();

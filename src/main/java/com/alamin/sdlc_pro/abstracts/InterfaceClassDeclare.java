@@ -4,16 +4,19 @@ public interface InterfaceClassDeclare  {
     /**
      * Not Declared for Interface
      *
-     * Explicitly interface not extends Object-class
+     * Interface methods by default public abstract
+     * Interface properties by default public static final
+     * Explicitly interface can not extend Object-class but implicitly extends Object-class
      * Modifier not used public final interface
      * private int v = 10;
      * private static int ps = 20;
      * private static final int psf = 30;
      * static {
-     *     // Static block
+     *      Not static block explicitly declare the interface
+     *      static block works implicitly provide compiler for object types
      *  }
      *  {
-     *    // Instance Block
+     *    // Not declare Instance Block here the interface
      *  }
      *  public InterfaceClassDeclare(){}
      *  private static final void method1(){}

@@ -3,6 +3,7 @@ package com.alamin.sdlc_pro.abstracts;
 /**
  * Modifier not used public final abstract class
  * Explicitly abstract class extends Object-class
+ * Abstract class by default public
  */
 abstract class Wish extends Object{ // 100% Abstract Class
     public Wish() {
