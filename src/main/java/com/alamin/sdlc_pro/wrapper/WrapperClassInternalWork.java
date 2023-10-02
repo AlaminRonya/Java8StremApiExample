@@ -14,5 +14,9 @@ public class WrapperClassInternalWork {
         System.out.println("(short) 128 or Short.valueOf((short) 128): "+(b5 == b6));
         System.out.println("Cache Range: -128 to 127 than create new object.");
         System.out.println("Short b6 = (short) 128 :=> new Short((short)128)");
+        Short s = 4656;
+        System.out.println(Integer.toBinaryString(s));
+        int reverse = Short.reverseBytes(s);
+        System.out.println(Integer.toBinaryString(reverse));
     }
 }

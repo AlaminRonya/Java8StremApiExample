@@ -22,5 +22,8 @@ public class InternalWorkWrapperClassByte {
         System.out.println(Byte.decode("065"));
         System.out.println(Byte.decode("89"));
         System.out.println(Byte.decode("0xF"));
+        for (int i = -128; i < 128; i++){
+            System.out.println(i + " == " +Byte.toUnsignedInt((byte) i));
+        }
     }
 }
