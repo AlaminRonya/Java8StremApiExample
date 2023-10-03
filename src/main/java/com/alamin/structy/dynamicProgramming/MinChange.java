@@ -8,7 +8,7 @@ public class MinChange {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3};
-        int amount = 4;
+        int amount = 7;
         System.out.println(minChange(amount, nums));
         for (Map.Entry<Integer, Integer> n: memo.entrySet()){
             System.out.println(n);
@@ -27,8 +27,8 @@ public class MinChange {
 
         int minCoins = -1;
         for (int coin : coins) {
-            int subAmount = amount - coin;
-            int subCoins = minChange(subAmount, coins);
+//            int subAmount = amount - coin;
+            int subCoins = minChange(amount - coin, coins);
 
             if (subCoins != -1) {
                 int numCoins = 1 + subCoins;

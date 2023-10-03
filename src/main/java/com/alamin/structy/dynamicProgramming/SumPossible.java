@@ -7,7 +7,7 @@ public class SumPossible {
     private static final Map<Integer, Boolean> memo = new HashMap<>();
     public static void main(String[] args) {
         int[] nums = {1,2,3};
-        int amount = 4;
+        int amount = 7;
         System.out.println(sumPossible(amount, nums));
     }
 
