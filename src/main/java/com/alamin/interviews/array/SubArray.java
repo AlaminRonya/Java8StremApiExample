@@ -1,10 +1,13 @@
 package com.alamin.interviews.array;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SubArray {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6,7};
 //        showOfSubArray(arr);
-        divideLengthOfSubArray(arr, 2);
+        System.out.println(divideLengthOfSubArray(arr, 2));
     }
     private static void showOfSubArray(int[] arr){
         int iIndex = 0;
@@ -22,17 +25,19 @@ public class SubArray {
             iIndex++;
         }
     }
-    private static void divideLengthOfSubArray(int[] arr, int k){
+    private static List<List<Integer>> divideLengthOfSubArray(int[] arr, int k){
+        List<List<Integer>> result = new ArrayList<>();
         int iIndex = 0;
         int length = arr.length;
         while (iIndex < length){
             int jIndex = iIndex;
-            System.out.print("[");
+            List<Integer> row = new ArrayList<>();
             while (jIndex < length && jIndex < k + iIndex ){
-                System.out.print(arr[jIndex++]+", ");
+                row.add(arr[jIndex++]);
             }
-            System.out.println("]");
+            result.add(row);
             iIndex += k;
         }
+        return result;
     }
 }
