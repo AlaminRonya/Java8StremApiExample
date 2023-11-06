@@ -1,4 +1,4 @@
-package com.alamin.interviews.array;
+package com.alamin.interviews.binary_search;
 
 public class FindCeilFloorOfAnNumberInASortedArray {
     public static void main(String[] args) {
