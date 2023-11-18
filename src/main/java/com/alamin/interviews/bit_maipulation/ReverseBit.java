@@ -18,6 +18,7 @@ public class ReverseBit {
             leftIndex--;
             rightIndex++;
         }
+
         return rev;
     }
 
