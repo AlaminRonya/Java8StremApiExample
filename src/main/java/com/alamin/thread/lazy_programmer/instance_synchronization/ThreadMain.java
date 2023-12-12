@@ -85,7 +85,28 @@ public class ThreadMain {
 
             }
         });
-        t7.start();
-        t8.start();
+//        t7.start();
+//        t8.start();
+
+        System.out.println("**********************************");
+        InstancePropertyStaticMethodNonStaticMethodSynchronizationResource instancePropertyStaticMethodNonStaticMethodSynchronizationResource = new InstancePropertyStaticMethodNonStaticMethodSynchronizationResource();
+        Thread t9  = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                instancePropertyStaticMethodNonStaticMethodSynchronizationResource.setSynchronizedMethod();
+
+            }
+        });
+        Thread t10  = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    InstancePropertyStaticMethodNonStaticMethodSynchronizationResource.getSynchronizedMethod();
+                }
+
+            }
+        });
+        t9.start();
+        t10.start();
     }
 }
