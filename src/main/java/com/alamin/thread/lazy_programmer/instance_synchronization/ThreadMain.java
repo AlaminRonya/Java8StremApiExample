@@ -106,7 +106,18 @@ public class ThreadMain {
 
             }
         });
+
+        Thread t11  = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    InstancePropertyStaticMethodNonStaticMethodSynchronizationResource.getSynchronizedMethod();
+                }
+
+            }
+        });
         t9.start();
         t10.start();
+        t11.start();
     }
 }
