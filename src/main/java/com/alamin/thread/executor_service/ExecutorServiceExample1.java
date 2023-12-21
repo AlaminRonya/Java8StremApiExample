@@ -1,14 +1,21 @@
 package com.alamin.thread.executor_service;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.*;
 
 public class ExecutorServiceExample1 {
     public static void main(String[] args) {
 //        example1();
 //        example2();
-        example4();
+//        System.out.println("*************");
+//        example4();
+//        System.out.println("******************");
+//        example5();
         System.out.println("******************");
-        example5();
+        example6();
 
     }
 
@@ -82,6 +89,27 @@ public class ExecutorServiceExample1 {
         System.out.println(future.isDone());
         executorService.shutdown();
     }
+    public static void example6(){
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        List<Callable<String>> callables = new ArrayList<>();
+        callables.add(newCallable("Task 1.1"));
+        callables.add(newCallable("Task 1.2"));
+        callables.add(newCallable("Task 1.3"));
+        try {
+//            var msg = (String) executorService.invokeAny((Collection) callables);
+//            System.out.println(msg);
+            List<Future<String>> msg =  executorService.invokeAll(callables);
+            for (Future future: msg){
+                System.out.println(future.get());
+            }
+        }
+        catch (InterruptedException | ExecutionException ignored){
+
+        }
+
+//        System.out.println(future.isDone());
+        executorService.shutdown();
+    }
     private static Runnable newRunnable(String s) {
         return () -> {
             String completedMsg = Thread.currentThread().getName() +" : "+s;
@@ -90,8 +118,6 @@ public class ExecutorServiceExample1 {
     }
 
     private static Callable newCallable(String s) {
-        return () -> {
-            return Thread.currentThread().getName() +" : "+s;
-        };
+        return () -> Thread.currentThread().getName() +" : "+s;
     }
 }
