@@ -1,4 +1,4 @@
-package com.alamin.socket_programming.client_server_application_without_threading;
+package com.alamin.socket_programming.tcp.client_server_application_without_threading;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
