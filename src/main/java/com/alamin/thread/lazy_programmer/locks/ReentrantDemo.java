@@ -1,4 +1,4 @@
-package com.alamin.thread.lazy_programmer.lock;
+package com.alamin.thread.lazy_programmer.locks;
 
 import java.util.concurrent.locks.ReentrantLock;
 
