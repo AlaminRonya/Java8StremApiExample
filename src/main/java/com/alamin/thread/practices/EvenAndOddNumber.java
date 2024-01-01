@@ -4,7 +4,7 @@ public class EvenAndOddNumber implements Runnable{
     private static int number = 0;
 //    private final int maxNumber;
 //    private final int remainder;
-    private static Object lock = new Object();
+    private static  Object lock = new Object();
 
 
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class EvenAndOddNumber implements Runnable{
 
     @Override
     public void run() {
-        while (number <=10){
+        while (number <= 1000){
             if (number %2 == 0 && Thread.currentThread().getName().equals("THREAD-EVEN")){
                 synchronized (lock){
                     System.out.println("Thread Name: "+Thread.currentThread().getName()+", Value: "+number);
