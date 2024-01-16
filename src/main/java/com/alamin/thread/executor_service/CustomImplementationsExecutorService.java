@@ -8,18 +8,20 @@ import java.util.concurrent.TimeUnit;
 public class CustomImplementationsExecutorService {
     public static void main(String[] args) {
         ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(2, 4, 10,
-                TimeUnit.MINUTES, new ArrayBlockingQueue<>(2),
+                TimeUnit.HOURS, new ArrayBlockingQueue<>(2),
                 new CustomThreadFactor(), new CustomRejectHandler());
-        for (int i = 0; i < 6; i++) {
+//        poolExecutor.allowCoreThreadTimeOut(true);
+        for (int i = 0; i < 5; i++) {
             poolExecutor.submit(()->{
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(5000);
                 }catch (Exception e){
 
                 }
                 System.out.println("Task processed by "+Thread.currentThread().getName());
             });
         }
+
         poolExecutor.shutdown();
 
     }
