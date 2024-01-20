@@ -6,7 +6,7 @@ import java.util.Map;
 public class TwoSum {
     public static void main(String[] args) {
         int[] nums = {2,5,4};
-        int[] sum = twoSum(nums, 5);
+        int[] sum = twoSum(nums, 6);
         for (Integer value: sum){
             System.out.print(value+ ",");
         }
