@@ -25,7 +25,7 @@ public class Root {
     }
 
     public static void main(String[] args) {
-        File file = new File("D:\\Japan\\Java8StreamApi\\src\\main\\java\\com\\alamin\\eid\\Hpritha");
+        File file = new File("D:\\Japan\\Java8StreamApi\\src\\main\\java\\com\\alamin\\eid\\txt.txt");
         int temp = 0;
         try {
             Scanner sc = new Scanner(file);
