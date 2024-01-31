@@ -1,4 +1,4 @@
-package com.alamin.oops;
+package com.alamin.oops.mcq;
 class A{
     public static void print(){
         System.out.println("A");
