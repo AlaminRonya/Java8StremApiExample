@@ -1,6 +1,8 @@
 package com.alamin.record;
 
-public record StudentRecord(int id, String name, float cgpa) {
+import java.io.Serializable;
+
+public record StudentRecord(int id, String name, float cgpa) implements Serializable {
     /**
      * Record class is hold the two types of constructor
      * 1. Canonical-Constructor
@@ -30,11 +32,11 @@ public record StudentRecord(int id, String name, float cgpa) {
 //        this.cgpa = cgpa;
 //    }
     // TODO: 01/02/2024 This is Compact-Constructor using the validation of the fields, Most use the compact-constructor
-//    public StudentRecord{
-//        if (cgpa < 0.00 || 4.00 < cgpa){
-//            throw new IllegalStateException("Invalid cgpa....");
-//        }
-//    }
+    public StudentRecord{
+        if (cgpa < 0.00 || 4.00 < cgpa){
+            throw new IllegalStateException("Invalid cgpa....");
+        }
+    }
 
     // TODO: 01/02/2024 Compact-constructor can chaining
 //    public StudentRecord{

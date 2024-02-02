@@ -1,9 +1,10 @@
 package com.alamin.record;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 //public final class StudentClass extends java.lang.Record{
-public final class StudentClass {
+public final class StudentClass implements Serializable {
     private final int id;
     private final String name;
     private final float cgpa;
