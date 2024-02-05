@@ -11,7 +11,7 @@ public class MCQ_2 {
             "A","B","C"
         );
         doors.stream().forEach(e->{
-            System.out.println(e + doorNumber++);
+//            System.out.println(e + doorNumber++);
         });
     }
 }
